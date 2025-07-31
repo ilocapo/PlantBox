@@ -1,50 +1,92 @@
-# Welcome to your Expo app 👋
+# 🌱 PlantBox - Pokédex des Plantes
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Une application d'apprentissage pour découvrir une nouvelle plante chaque jour et construire votre Pokédex personnel !
 
-## Get started
+## ✨ Fonctionnalités
 
-1. Install dependencies
+### 🗓️ Plante du Jour
+- **Découverte quotidienne** : Une nouvelle plante vous est proposée chaque jour
+- **Contenu éducatif** : Descriptions détaillées avec conseils de soins
+- **Choix personnel** : Ajoutez ou passez selon vos préférences
 
-   ```bash
-   npm install
-   ```
+### 📚 Pokédex Personnel
+- **Collection personnalisée** : Toutes vos plantes découvertes
+- **Informations complètes** : Soins, origine, difficulté
+- **Photos réelles** : Images haute qualité
+- **Date de découverte** : Historique de vos apprentissages
 
-2. Start the app
+### 🎨 Design Moderne
+- **Interface épurée** : Design minimaliste et intuitive
+- **Couleurs thématiques** : Chaque type de plante a sa couleur
+- **Photos optimisées** : Chargement fluide avec transitions
+- **Bords arrondis** : Elements avec des formes douces
 
-   ```bash
-   npx expo start
-   ```
+## 📱 Comment utiliser
 
-In the output, you'll find options to open the app in a
+### Premier lancement
+1. Ouvrez l'application
+2. Une "Plante du Jour" s'affiche automatiquement
+3. Lisez les informations éducatives
+4. Choisissez d'ajouter au Pokédex ou passer
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Utilisation quotidienne
+- Une nouvelle plante apparaît chaque jour (24h après la dernière)
+- Votre Pokédex grandit avec vos découvertes
+- Consultez les détails de vos plantes collectées
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Navigation
+- **Page d'accueil** : Votre Pokédex personnel
+- **Bouton "Plante du jour"** : Vérifier s'il y a une nouvelle plante
+- **Cartes cliquables** : Détails complets de chaque plante
 
-## Get a fresh project
+## 🔧 Configuration API (Optionnel)
 
-When you're ready, run:
+Pour accéder à plus de 400,000 espèces :
 
-```bash
-npm run reset-project
+1. Créez un compte sur [trefle.io](https://trefle.io/)
+2. Obtenez votre clé API gratuite
+3. Modifiez `services/plantApi.ts` :
+```typescript
+const TREFLE_API_KEY = 'votre_clé_api_ici';
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🎯 Types de Plantes
 
-## Learn more
+L'application reconnaît 10 types de plantes avec leurs couleurs :
 
-To learn more about developing your project with Expo, look at the following resources:
+- 🌸 **Flowering** (Fleuries) - Rose
+- 🌿 **Foliage** (Feuillage) - Vert
+- 🌵 **Succulent** (Succulentes) - Orange
+- 🏝️ **Tropical** (Tropicales) - Turquoise
+- 🌱 **Herbs** (Herbes) - Vert lime
+- 🌳 **Trees** (Arbres) - Brun
+- 💧 **Aquatic** (Aquatiques) - Bleu
+- 🎭 **Orchid** (Orchidées) - Violet
+- 🌾 **Fleshy** (Charnues) - Vert-jaune
+- ⚕️ **Medicinal** (Médicinales) - Gris-bleu
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📱 Stockage Local
 
-## Join the community
+- **AsyncStorage** : Sauvegarde automatique de votre Pokédex
+- **Persistance** : Vos données restent même après fermeture
+- **Synchronisation** : Suivi automatique des dates
 
-Join our community of developers creating universal apps.
+## 🚀 Technologies
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **React Native + Expo**
+- **TypeScript** pour la sécurité des types
+- **expo-image** pour l'optimisation des images
+- **AsyncStorage** pour la persistance
+- **API Trefle.io** (optionnel) pour les données
+
+## 🎨 Palette de Couleurs
+
+- **Fond principal** : `#d7fcfa86` (Turquoise doux)
+- **Surfaces** : Blanc avec ombres subtiles
+- **Texte** : Noir doux avec variations de gris
+- **Accents** : Couleurs thématiques par type de plante
+
+---
+
+**PlantBox** - Apprenez quelque chose de nouveau chaque jour ! 🌱✨
+# PlantBox
