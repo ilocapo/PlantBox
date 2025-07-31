@@ -1,60 +1,50 @@
-import { StyleSheet, Text, type TextProps } from 'react-native';
+import { useThemeColors } from '@/hooks/useThemeColors';
+import { StyleSheet, Text, TextProps } from 'react-native';
 
-import { useThemeColor } from '@/hooks/useThemeColor';
+type ThemeColors = ReturnType<typeof useThemeColors>;
+type ColorKeys = keyof ThemeColors;
 
-export type ThemedTextProps = TextProps & {
-  lightColor?: string;
-  darkColor?: string;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
-};
+type Props = TextProps & {
+    variant?: keyof typeof styles,
+    color?: ColorKeys
+}
 
-export function ThemedText({
-  style,
-  lightColor,
-  darkColor,
-  type = 'default',
-  ...rest
-}: ThemedTextProps) {
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
-
-  return (
-    <Text
-      style={[
-        { color },
-        type === 'default' ? styles.default : undefined,
-        type === 'title' ? styles.title : undefined,
-        type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
-        type === 'subtitle' ? styles.subtitle : undefined,
-        type === 'link' ? styles.link : undefined,
-        style,
-      ]}
-      {...rest}
-    />
-  );
+export function ThemedText({variant, color, ...rest} : Props) {
+    const colors = useThemeColors();
+    return (
+        <Text
+            style={[
+                styles[variant ?? 'body3'],
+                { color: colors[color ?? 'text'] }
+            ]}
+            {...rest}
+        />
+    );
 }
 
 const styles = StyleSheet.create({
-  default: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  defaultSemiBold: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: '600',
-  },
-  title: {
+  headline: {
     fontSize: 32,
     fontWeight: 'bold',
-    lineHeight: 32,
+    textAlign: 'center',
+    color: '#2E7D32',
+    marginTop: 50,
   },
-  subtitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  title: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: '#333',
   },
-  link: {
-    lineHeight: 30,
+  body1: {
     fontSize: 16,
-    color: '#0a7ea4',
+    color: '#333',
   },
-});
+  body2: {
+    fontSize: 14,
+    color: '#666',
+  },
+  body3: {
+    fontSize: 12,
+    color: '#999',
+  },
+})
